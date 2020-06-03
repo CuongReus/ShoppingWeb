@@ -45,6 +45,7 @@ WEBSITE TIỆM CẮT TÓC
 
 /* googel font poppins */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 /*----------------------------------------*/
 /* 1. Theme Default CSS
@@ -1303,6 +1304,14 @@ li.megamenu-img a {
 }
 
 .single-product:hover .pro-info {
+    opacity: 0;
+}
+.single-product .info {
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+}
+
+.single-product:hover .info {
     opacity: 0;
 }
 
@@ -4331,3 +4340,38 @@ a.shipping-calculator-button:hover {
   top: 6px;
   transition: all 0.3s ease-in 0s;
 }
+/* search box */
+/* .cont{
+    width:100%;
+    left:20%;
+} */
+.imagebox{
+    width:13vw;
+    height:35vh;
+    display:inline-block;
+    margin-left:7%;
+    margin-bottom:5%;
+    color:white;
+}
+.searchbox{
+    width:80%;
+    height:50px;
+    margin-bottom:1%;
+    margin-top:1%;
+    margin-left:7%;
+}
+.search input[type=text] {
+    width: 150px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  /* When the input field gets focus, change its width to 50% */
+.search input[type=text]:focus {
+    width: 50%;
+  }
+.dancing {
+    font-family: 'Dancing Script', cursive;
+}  
+
