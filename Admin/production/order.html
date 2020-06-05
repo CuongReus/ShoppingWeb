@@ -106,23 +106,29 @@
                       <th scope="col">Tên sản phẩm</th>
                       <th scope="col">Khách hàng</th>
                       <th scope="col">Trạng thái</th>
-                      <th scope="col">Hủy đơn</th>
+                      <th scope="col" style="text-align: center;">Hủy đơn</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr onclick="DoNav('orderDetail.html');">
-                      <th scope="row">ID0001</th>
-                      <td class="w-20">Sáp vuốt tóc nam Loreal</td>
+                    <tr>
+                      <th scope="row" onclick="DoNav('orderDetail.html');">ID0001</th>
+                      <td class="w-20" onclick="DoNav('orderDetail.html');">Sáp vuốt tóc nam Loreal</td>
                       <td>Mai Tri Cuong</td>
-                      <td style="font-size: 15px;"><span class="badge badge-primary">Đang giao</span></td>
-                      <td><button type="button" class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i> Hủy đơn</button></td>
+                      <td style="font-size: 17px;" id="order">
+                        3
+                       </td>
+                      <td><button type="button" style="transform: translateX(45px);" class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i> Hủy đơn</button></td>
                     </tr>
                     <tr onclick="DoNav('orderDetail.html');">
                       <th scope="row">ID0002</th>
-                      <td class="w-20">Kéo cắt tóc nữ</td>
-                      <td>Pham Duc Duy</td>
-                      <td style="font-size: 15px;"><span class="badge badge-primary">Hoàn tất</span></td>
-                      <td><button type="button" class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i> Hủy đơn</button></td>
+                      <td class="w-20">Máy sấy tóc Panasonic</td>
+                      <td>Mai Tri Cuong</td>
+                      <td style="font-size: 17px;" id="day">
+                        <span class="badge badge-primary" id="day">
+                            Đang giao
+                        </span>
+                       </td>
+                      <td><button type="button" style="transform: translateX(45px);" class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i> Hủy đơn</button></td>
                     </tr>
                   </tbody>
                 </table>  
@@ -156,6 +162,20 @@
           function DoNav(theUrl){
            document.location.href = theUrl;
         }
+       
+          x = document.getElementById("order").textContent;
+          if(x == 1) {
+            document.getElementById('order').innerHTML = '<span class="badge badge-warning">Xử lí</span>'
+          }
+          if(x == 2) {
+            document.getElementById('order').innerHTML = '<span class="badge badge-primary">Giao hàng</span>'
+          }
+          if(x == 3) {
+            document.getElementById('order').innerHTML = '<span class="badge badge-success">Hoàn tất</span>'
+          }
+          if(x == 4) {
+            document.getElementById('order').innerHTML = '<span class="badge badge-danger">Thất bại</span>'
+          }
         </script>
 	
   </body>
